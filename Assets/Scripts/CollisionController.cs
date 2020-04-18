@@ -46,11 +46,13 @@ public class CollisionController : MonoBehaviour
         {
             //Debug.Log("Point to player two!");
             this.scoreController.GoalPlayer2();
+            StartCoroutine(this.ballMovement.StartBall(true));
         }
         else if (collision.gameObject.name == "Right wall")
         {
             //Debug.Log("Point to player one!");
             this.scoreController.GoalPlayer1();
+            StartCoroutine(this.ballMovement.StartBall(false));
         }
 
     }
